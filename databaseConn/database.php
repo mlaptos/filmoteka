@@ -68,7 +68,6 @@
 
             $movies = array();
 
-            // Ispis knjiga.
             while($row = $result->fetch_assoc()) {
                 array_push($movies, $row);
             }
@@ -92,6 +91,36 @@
             return 'No movie with that ID';
         }
 
+    }
+
+    function createMovie($naslov, $redatelj, $glumci, $opis, $trajanje, $blagajna, $poster){
+        global $conn;
+
+        $target_dir = "assets/";
+        $target_file = $target_dir . basename($poster["name"]);
+        move_uploaded_file($poster["tmp_name"], $target_file);
+
+        $sql  = "INSERT INTO film (naslov, redatelj, glumci, opis, trajanje, blagajna, poster) VALUES ";
+        $sql .= "('".$naslov."','".$redatelj."','".$glumci."','".$opis."','".$trajanje."','".$blagajna."','".$poster['name']."')";
+
+        if ($conn->query($sql) === TRUE) {
+            return true;
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    function updateMovie($idFilma, $nazivStupca, $novaVrijednost){
+        global $conn;
+
+        $sql  = "UPDATE film SET ".$nazivStupca."='".$novaVrijednost."' ";
+        $sql .= "WHERE idfilm='".$idFilma."' ";
+
+        if ($conn->query($sql) === TRUE) {
+            return 'izmijenjeno';
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 
     function closeConnection(){

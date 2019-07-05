@@ -9,6 +9,15 @@
             return false;
         }
     }
+    
+    function checkAdminSession(){
+        if(isset($_SESSION['email'])){
+            if($_SESSION['email'] == 'admin@gmail.com'){
+                return true;
+            }
+        }
+        return false;
+    }
 
     function removeSession(){
         unset($_SESSION['email']);

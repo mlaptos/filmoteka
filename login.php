@@ -18,7 +18,11 @@
 
 
         if($redirect_){
+          if($_SESSION['email'] == 'admin@gmail.com'){
+              header('Location: admin.php');
+          }else{
               header('Location: index.php');
+          }
         }
     } else{
 

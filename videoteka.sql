@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2019 at 08:51 PM
+-- Generation Time: Jul 05, 2019 at 08:08 PM
 -- Server version: 10.1.39-MariaDB
 -- PHP Version: 7.3.5
 
@@ -46,7 +46,8 @@ CREATE TABLE `film` (
 INSERT INTO `film` (`idFilm`, `naslov`, `redatelj`, `glumci`, `opis`, `trajanje`, `blagajna`, `poster`) VALUES
 (1, 'Guardians of the Galaxy', 'James Gunn', 'Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel, Bradley Cooper', 'Grupa međugalaktičkih kriminalaca mora zaustavit fanatične ratnike u pohodu na osvajanje svemira', '2h 1min', '773, 3 milijuna USD', 'cuvarigalaksije.jpg'),
 (2, 'Pokemon Detective Pikachu', 'Rob Letterman', 'Ryan Reynolds, Justice Smith, Kathryn Newton', 'U svijetu gdje ljudi sakupljaju Pokemone kako bi se borili, dječak naleti na inteligentnog Pikachua koji zna pričati te uz to želi postati detektiv.', '1h 44min', '130 milijuna USD', 'pikachu.jpg'),
-(3, 'Ready Player One', 'Steven Spielberg', 'T.J. Miller, Olivia Cooke, Tye Sheridan, Hannah John-Kamen, Letitia Wright', 'Kada kreator svijeta virtualne stvarnosti zvane OASIS umre, izbaci video u kojem izaziva sve korisnike OASIS-a da pronađu \"Easter Eggove\" koji će pronalazaču dati blago.', '2h 20min', '582, 9 milijuna USD', 'igrac1.jpg');
+(3, 'Ready Player One', 'Steven Spielberg', 'T.J. Miller, Olivia Cooke, Tye Sheridan, Hannah John-Kamen, Letitia Wright', 'Kada kreator svijeta virtualne stvarnosti zvane OASIS umre, izbaci video u kojem izaziva sve korisnike OASIS-a da pronađu \"Easter Eggove\" koji će pronalazaču dati blago.', '2h 20min', '582, 9 milijuna USD', 'igrac1.jpg'),
+(4, 'Deadpool 2', 'David Leitch', 'Ryan Reynolds, Rhett Reese, Paul Wernick', 'placeholder', '2h 15min', '785 milijuna USD', 'dp2.jpg');
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,9 @@ INSERT INTO `korisnik` (`idKorisnik`, `ime`, `prezime`, `email`, `lozinka`) VALU
 (4, 'test4', 'test4', 'test4@gmail.com', 'test1234'),
 (5, 'test5', 'test5', 'test5@gmail.com', 'test1234'),
 (6, 'test6', 'test6', 'test6@gmail.com', 'qwer1234'),
-(7, 'test7', 'test7', 'test7@gmail.com', 'asdf1234');
+(7, 'test7', 'test7', 'test7@gmail.com', 'asdf1234'),
+(8, 'test8', 'test8', 'test8@gmail.com', 'qwer1234'),
+(9, 'admin', 'admin', 'admin@gmail.com', 'admin123');
 
 -- --------------------------------------------------------
 
@@ -127,13 +130,13 @@ ALTER TABLE `zanr`
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `idFilm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idFilm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `korisnik`
 --
 ALTER TABLE `korisnik`
-  MODIFY `idKorisnik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idKorisnik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `zanr`
